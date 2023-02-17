@@ -1,0 +1,17 @@
+.item {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.item:hover {
+    background-color: rgba(44, 96, 227, 1);
+    color: white;
+    padding-left: 10px;
+}
+.itemText {
+    font-size: 18px;
+    margin-left: 10px;
+}
