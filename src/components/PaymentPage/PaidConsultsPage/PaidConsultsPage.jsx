@@ -31,7 +31,7 @@ const PaidConsultsPage = ({ consultsList }) => {
         </div>
         <div className={style.form__buttons}>
         {["Word", "Excel"].map((b) => (
-          <Button startIcon={<Icon icon="material-symbols:download" color="white" />} variant="contained" style={buttonStyle}>
+          <Button key={b.id} startIcon={<Icon icon="material-symbols:download" color="white" />} variant="contained" style={buttonStyle}>
             {b}
           </Button>
         ))}

@@ -1,6 +1,6 @@
-import s from "../AdminPanel/AdminInterface/UserSettings/UserSettings.module.css";
 import React from "react";
 import {NotificationItem} from "./NotificationItem/NotificationItem";
+import {TabTitle} from "../common/TabTitle/TabTitle";
 
 export const Notifications = () => {
     const notifications = [
@@ -17,7 +17,7 @@ export const Notifications = () => {
 
     return (
         <>
-            <h1 className={s.title}>Уведомления</h1>
+            <TabTitle title={'Уведомления'}/>
             {notifications.map((n, index) =>
                 <NotificationItem key={index} notification={n.notification} time={n.time}/>)}
         </>

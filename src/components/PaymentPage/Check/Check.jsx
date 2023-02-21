@@ -5,12 +5,11 @@ import style from './Check.module.css';
 const Check = ({consultsList, btnText, btnColor, disabled}) => {
   let totalPrice = [];
   consultsList.map(a => totalPrice.push(a.price))
-  console.log(totalPrice)
     return (
         <div className={style.check}>
         {consultsList.map(s => {
           return (
-            <div className={style.check__item}>
+            <div className={style.check__item} key={s.id}>
               <h2 className={style.item__title}>{s.text}</h2>
                         <div className={style.item__info}>
                             <div className={style.item__info_part}>

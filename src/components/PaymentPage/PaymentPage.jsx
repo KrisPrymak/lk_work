@@ -1,6 +1,5 @@
-import { Select } from "@material-ui/core";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, {useState} from "react";
+import {useSelector} from "react-redux";
 import ButtonBack from "../common/ButtonBack/ButtonBack";
 import DropDownList from "../common/DropDownList/DropDownList";
 import Check from "./Check/Check";
@@ -8,6 +7,7 @@ import NoPaidConsultsPage from "./NoPaidConsultsPage/NoPaidConsultsPage";
 import PaidConsultsPage from "./PaidConsultsPage/PaidConsultsPage";
 import style from "./PaymentPage.module.css";
 import PayTutorial from "./PayTutorial/PayTutorial";
+import {TabTitle} from "../common/TabTitle/TabTitle";
 
 const PaymentPage = () => {
   const [isFirstEnter, setIsFirstEnter] = useState(true);
@@ -44,7 +44,7 @@ const PaymentPage = () => {
     <div>
       {paySelectServices ? (
         <div>
-          <h1 className={style.title}>Оплата выбранных услуг</h1>
+          <TabTitle title={'Оплата выбранных услуг'}/>
           <ButtonBack
         handleClick={() => {backFromPayPage()}}
       />
@@ -52,7 +52,9 @@ const PaymentPage = () => {
         </div>
       ) : (
         <div>
-          <h1 className={style.title + ' ' + (isFirstEnter && style.blur)}>Оплата услуг</h1>
+          <div className={isFirstEnter && style.blur}>
+            <TabTitle title={'Оплата услуг'}/>
+          </div>
           {isOpenPayTutorial ? (
             <PayTutorial setIsFirstEnter={setIsFirstEnter} setIsOpenPayTutorial={setIsOpenPayTutorial} />
           ) : (

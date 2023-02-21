@@ -1,4 +1,3 @@
-
 .title {
   border-bottom: 1px solid #bdbdbd;
   font-size: 30px;
@@ -7,6 +6,9 @@
   font-family: "Tahoma";
   line-height: 1.2;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  height: 75px;
 }
 
 .content {
@@ -18,6 +20,11 @@
 
 .content__listItem {
   padding-top: 15px;
+  width: 100%;
+}
+
+.content__listItem li {
+  align-items: flex-start;
 }
 
 .content div::before {
@@ -25,7 +32,7 @@
 }
 
 .content div svg {
-  color: #2C60E3;
+  color: #2c60e3;
 }
 
 .consultTemplate {
@@ -34,19 +41,21 @@
   max-width: 730px;
   width: 100%;
   padding: 30px 15px;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   margin-top: 15;
 }
 
 .consultTemplate__title {
   margin-bottom: 12px;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .consultTemplate__info {
   display: flex;
   max-width: 564px;
   width: 100%;
+  margin-bottom: 12px;
 }
 
 .consultTemplate__info p:not(:last-child) {
@@ -81,8 +90,21 @@
 }
 
 @media (min-width: 1100px) {
-  .buttons button:not(:first-child) {
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .buttons__contentBtns {
+    display: flex;
+  }
+
+  .buttons__contentBtns button {
     width: 160px;
+  }
+  .buttons__contentBtns button:first-of-type {
+    margin-right: 15px;
   }
 }
 
@@ -104,5 +126,4 @@
     width: 100%;
     margin-top: 10px;
   }
-
 }

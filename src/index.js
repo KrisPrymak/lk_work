@@ -1,12 +1,11 @@
 import { StylesProvider } from "@material-ui/styles";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import store from "./store/store";
-import BlueButton from "./components/common/BlueButton/BlueButton";
-import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +13,6 @@ root.render(
     <BrowserRouter>
       <StylesProvider injectFirst>
         <App />
-        <BlueButton />
       </StylesProvider>
     </BrowserRouter>
   </Provider>

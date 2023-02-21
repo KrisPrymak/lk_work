@@ -65,6 +65,14 @@
   margin-right: 30px;
 }
 
+.popup__buttons div {
+  margin-right: 30px;
+}
+.popup__buttons div, .popup__buttons div button {
+  max-width: 255px;
+  width: 100%;
+}
+
 @media (max-width: 1099px) {
   .popup {
     width: 343px;

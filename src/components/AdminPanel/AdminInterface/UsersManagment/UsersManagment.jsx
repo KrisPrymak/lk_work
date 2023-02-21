@@ -1,6 +1,6 @@
-import s from './UsersManagment.module.css'
 import {UserInfo} from "./UserInfo/UserInfo";
 import {SearchInput} from "../../../common/SearchInput/SearchInput"
+import {TabTitle} from "../../../common/TabTitle/TabTitle";
 export const UserManagement = ()=> {
 
     const users = [
@@ -10,7 +10,7 @@ export const UserManagement = ()=> {
     ]
     return (
         <>
-            <div className={s.title}>Управление пользователями</div>
+            <TabTitle title={'Управление пользователями'}/>
             <SearchInput placeholder={'Поиск пользователя по имени, номеру телефона...'}/>
             {users.map(u=> <UserInfo
                 key={u.id}

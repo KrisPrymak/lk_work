@@ -3,6 +3,9 @@
   padding-bottom: 10px;
   font-weight: 700;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  height: 75px;
 }
 
 .content div::before {

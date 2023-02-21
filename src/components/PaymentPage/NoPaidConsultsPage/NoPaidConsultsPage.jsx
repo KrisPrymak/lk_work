@@ -53,7 +53,7 @@ const NoPaidConsultsPage = ({
       <List className={styleX.list}>
             {consultsList.map(s => {
                 return (
-                    <ListItemButton className={idList.includes(s.id) ? styleX.list__item_select : styleX.list__item} onClick={() => toggleClick(s.id)}>
+                    <ListItemButton key={s.id} className={idList.includes(s.id) ? styleX.list__item_select : styleX.list__item} onClick={() => toggleClick(s.id)}>
                         <h2 className={styleX.item__title}>{s.text}</h2>
                         <div className={styleX.item__info}>
                             <div className={styleX.item__info_part}>
@@ -77,7 +77,7 @@ const NoPaidConsultsPage = ({
             text={"Оплатить все"}
             width="100%"
           />
-          <BlueButton text={"Оплатить выборочно"} width="100%" handleClick={() => onSelectedPay()}/>
+          <BlueButton disabled={idList.length === 0} text={"Оплатить выборочно"} width="100%" handleClick={() => onSelectedPay()}/>
         </div>
       </div>
     </div>

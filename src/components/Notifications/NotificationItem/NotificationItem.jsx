@@ -2,8 +2,8 @@ import s from './NotificationItem.module.css'
 export const NotificationItem = ({notification, time})=> {
     return (
         <div className={s.notificationItem}>
-            <h4 className={s.notification}>{notification}</h4>
-            <h4 className={s.time}>{time}</h4>
+            <p className={s.notification}>{notification}</p>
+            <p className={s.time}>{time}</p>
         </div>
     )
 }

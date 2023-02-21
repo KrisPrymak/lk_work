@@ -8,10 +8,9 @@ export const FilterButton = ({text, filterValue}) => {
     const onClickHandler = (filter) => {
         setFilter (filter === filterValue + 'Up' ? filterValue +'Down': filterValue +'Up')
     }
-    console.log(filter)
     return (
         <button className={s.filterButton} onClick={()=>onClickHandler(filter)}>
-            <h4>{text}</h4>
+            <p>{text}</p>
             {filter === filterValue + 'Down'
                 ? <Icon icon="material-symbols:keyboard-arrow-up-rounded" width={'30px'}/>
                 : <Icon icon="material-symbols:keyboard-arrow-down-rounded" width={'30px'} />

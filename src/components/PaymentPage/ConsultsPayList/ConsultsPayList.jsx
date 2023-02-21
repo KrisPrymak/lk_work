@@ -16,7 +16,7 @@ const ConsultsPayList = ({consultsList}) => {
         <List className={style.list}>
             {consultsList.map(s => {
                 return (
-                    <ListItemButton className={idList.includes(s.id) ? style.list__item_select : style.list__item} onClick={() => toggleClick(s.id)}>
+                    <ListItemButton key={s.id} className={idList.includes(s.id) ? style.list__item_select : style.list__item} onClick={() => toggleClick(s.id)}>
                         <h2 className={style.item__title}>{s.text}</h2>
                         <div className={style.item__info}>
                             <div className={style.item__info_part}>

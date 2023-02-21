@@ -3,9 +3,9 @@ import MyAccMobile from '../../AdminPanel/AdminInterface/MyAccMobile/MyAccMobile
 import { Menu } from '../Menu/Menu';
 import HeaderMobile from '../../Registration/HeaderMobile/HeaderMobile';
 import style from './LkTemplatePage.module.css';
-import { Route, Routes } from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import MedicalCare from '../../MedicalCare/MedicalCare';
-import {UserSettings} from './../../AdminPanel/AdminInterface/UserSettings/UserSettings';
+import {UserSettings} from '../../AdminPanel/AdminInterface/UserSettings/UserSettings';
 import { ServiceResult } from '../../ServiceResult/ServiceResult';
 import TelemedConsult from '../../TelemedConsult/TelemedConsult';
 import PaymentPage from '../../PaymentPage/PaymentPage';
@@ -22,7 +22,9 @@ const LkTemplatePage = () => {
                     <MyAccMobile />
                     
                     <Routes>
+                        <Route path= "*" element={<Navigate to={'/user/medicalCare'}/>} />
                         <Route path="/medicalCare" element={<MedicalCare />} />
+                        {/* <Route path="/calendar'" element={<calendar />} /> */}
                         <Route path="/results" element={<ServiceResult />} />
                         <Route path="/paidPage" element={<PaymentPage />} />
                         <Route path="/telemedConsult" element={<TelemedConsult />} />
@@ -39,15 +41,16 @@ const LkTemplatePage = () => {
 export default LkTemplatePage;
 
 const menuData = [
-    { id: 1004, text: "Медицинские услуги", icon: "cil:medical-cross", path: '/medicalCare' },
-    { id: 1006, text: "Результаты услуг", icon: "carbon:result", path: '/results' },
-    { id: 1007, text: "Оплата услуг", icon: "uiw:pay", path: '/paidPage' },
+    { id: 1004, text: "Медицинские услуги", icon: "cil:medical-cross", path: '/user/medicalCare' },
+    { id: 1005, text: "Календарь услуг", icon: "ph:calendar-blank", path: '/user/calendar' },
+    { id: 1006, text: "Результаты услуг", icon: "carbon:result", path: '/user/results' },
+    { id: 1007, text: "Оплата услуг", icon: "uiw:pay", path: '/user/paidPage' },
     {
       id: 1008,
       text: "Телемедицинские консультации",
       icon: "clarity:talk-bubbles-line",
-      path: '/telemedConsult'
+      path: '/user/telemedConsult'
     },
-    { id: 1009, text: "Уведомления", icon: "ph:bell", path: '/notifications' },
-    { id: 1010, text: "Настройки учетной записи", icon: "carbon:settings", path: '/settings' },
+    { id: 1009, text: "Уведомления", icon: "ph:bell", path: '/user/notifications' },
+    { id: 1010, text: "Настройки учетной записи", icon: "carbon:settings", path: '/user/settings' },
   ];

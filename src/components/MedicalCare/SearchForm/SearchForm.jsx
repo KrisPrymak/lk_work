@@ -1,18 +1,8 @@
-import {
-  Button,
-  createTheme,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-  ThemeProvider,
-} from "@mui/material";
-import React, { useState } from "react";
+import {createTheme, FormControl, InputLabel, MenuItem, Select, ThemeProvider,} from "@mui/material";
+import React, {useState} from "react";
 import style from "./SearchForm.module.css";
-import SearchIcon from "@mui/icons-material/Search";
-import { Box } from "@mui/system";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {SearchInput} from "../../common/SearchInput/SearchInput";
 
 const theme = createTheme({
   palette: {
@@ -42,52 +32,7 @@ const SearchForm = ({setIsOpenList}) => {
   return (
     <ThemeProvider theme={theme}>
       <form className={style.searchForm}>
-        <Box sx={{ height: "44px"}}>
-         <TextField
-            id="outlined-basic"
-            type="search"
-            label="Поиск услуги..."
-            variant="outlined"
-            size="small"
-            sx={{ width: {xs: '86%', md: "79%"}, borderRadius: "5px 0px 0px 5px"}}
-          />
-          <Button
-            size="medium"
-            startIcon={<SearchIcon />}
-            variant="contained"
-            sx={{
-              width: "21%",
-              height: "44px",
-              backgroundColor: "#757575",
-              borderRadius: "0px 5px 5px 0px",
-              fontSize: "14px",
-              textTransform: "none",
-              fontWeight: "700",
-              display: {xs: 'none', md: 'inline-flex'}
-            }}
-          >
-            Найти
-          </Button>
-          <Button
-            size="medium"
-            startIcon={<SearchIcon />}
-            variant="contained"
-            sx={{
-              width: {xs: "14%"},
-              height: "44px",
-              backgroundColor: "#757575",
-              borderRadius: "0px 5px 5px 0px",
-              fontSize: "14px",
-              textTransform: "none",
-              fontWeight: "700",
-              minWidth: '10px',
-              justifyContent: 'space-between',
-              display: {xs: 'inline-flex', md: 'none'}
-            }}
-          >
-          </Button>
-        </Box>
-
+          <SearchInput placeholder={"Поиск услуги..."} buttonColor={'grey'}/>
         <div className={style.searchForm__controls}>
           <FormControl sx={{ width: "154px"}}>
             <InputLabel sx={{textAlign: 'center'}} id="paid">Платно/ОМС</InputLabel>

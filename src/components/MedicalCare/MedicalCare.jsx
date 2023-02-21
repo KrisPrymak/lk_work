@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import style from "./MedicalCare.module.css";
 import SearchForm from "./SearchForm/SearchForm";
-import MyAccMobile from "../AdminPanel/AdminInterface/MyAccMobile/MyAccMobile";
 import MedicalCareList from "./MedicalCareList/MedicalCareList";
 import SelectedServicePage from "./SelectedServicePage/SelectedServicePage";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
+import {TabTitle} from "../common/TabTitle/TabTitle";
 
 const MedicalCare = () => {
   const [isOpenList, setIsOpenList] = useState(false);
@@ -17,13 +17,13 @@ const MedicalCare = () => {
 
 
   return (
-        <div className={style.medicalCare__content}>
-          <MyAccMobile />
+        <>
+          {/*<MyAccMobile />*/}
           {isSelectedCare.isSelect ? (
             <SelectedServicePage medicalCares={medicalCares} closePage={closePage} id={isSelectedCare.id}/>
           ) : (
             <div className={style.selectCarePage}>
-              <h1 className={style.medicalCare__title}>Медицинские услуги</h1>
+              <TabTitle title={'Медицинские услуги'}/>
               <SearchForm setIsOpenList={setIsOpenList} />
               {isOpenList && (
                 <MedicalCareList
@@ -33,8 +33,7 @@ const MedicalCare = () => {
               )}
             </div>
           )}
-
-        </div>
+        </>
   );
 };
 

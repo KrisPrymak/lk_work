@@ -1,6 +1,7 @@
 import {createTheme} from "@mui/material/styles";
 import {ThemeProvider} from "@mui/material";
-import LkTemplatePage from "./components/common/LkTemplatePage/LkTemplatePage";
+import {Pages} from "./components/Pages";
+import {StylesProvider} from "@material-ui/styles";
 
 function App() {
 
@@ -26,12 +27,16 @@ function App() {
     });
 
 
+
+
     return (
-        <ThemeProvider theme={theme}>
-            <div className='App'>
-                <LkTemplatePage />
-            </div>
-        </ThemeProvider>
+        <StylesProvider  injectFirst>
+            <ThemeProvider theme={theme}>
+                <div className='App'>
+                    <Pages/>
+                </div>
+            </ThemeProvider>
+        </StylesProvider>
     )
 }
 

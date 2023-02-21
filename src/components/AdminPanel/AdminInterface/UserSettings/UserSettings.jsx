@@ -1,20 +1,26 @@
 import s from "./UserSettings.module.css";
-
-import {Icon} from "@iconify/react";
 import {Button, TextField} from "@mui/material";
 import React from "react";
+import {useNavigate} from "react-router-dom";
+import ButtonBack from "../../../common/ButtonBack/ButtonBack";
+import {TabTitle} from "../../../common/TabTitle/TabTitle";
 
 export const UserSettings = () => {
+    const navigate = useNavigate()
 
-    const onSubmitHandler = () => {
-        console.log('user changed')
+    const goBack = () => {
+        navigate(-1)
     }
+    const onSubmitHandler = () => {
+        // console.log('user changed')
+    }
+
     return (
         <>
-            <h1 className={s.title}>Пользователь</h1>
-            <Button variant={"outlined"} color={'primary'} sx={{marginBottom: '30px', textTransform: 'none'}}>
-                <Icon icon="material-symbols:arrow-back"/>Назад
-            </Button>
+           <TabTitle title={'Пользователь'}/>
+           <div className={s.buttonBack}>
+           <ButtonBack handleClick={goBack}/>
+           </div>
             <h2 className={s.formTitle}>ID пользователя: Test ID</h2>
             <form onSubmit={onSubmitHandler}>
                 <div className={s.formGridContainer}>
@@ -56,6 +62,7 @@ export const UserSettings = () => {
         </>
     )
 }
+
 const styleSX = {
     button: {
         width: '100%',
@@ -65,6 +72,5 @@ const styleSX = {
     },
     input: {
         width: '100%',
-        // height: '100%',
     }
 }

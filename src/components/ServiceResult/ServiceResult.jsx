@@ -4,6 +4,7 @@ import s from './ServiceResult.module.css'
 import {SearchInput} from "../common/SearchInput/SearchInput";
 import {ServiceItem} from "./ServiceItem/ServiceItem";
 import {FilterButton} from "./FilterButton/FilterButton";
+import {TabTitle} from "../common/TabTitle/TabTitle";
 
 export const ServiceResult = () => {
     const servicesItems = [
@@ -27,7 +28,7 @@ export const ServiceResult = () => {
 
     return (
         <>
-            <h1 className={s.title}>Результаты услуг</h1>
+            <TabTitle title={'Результаты услуг'}/>
             <SearchInput placeholder={'Поиск результатов...'}/>
             <div className={s.serviceFilterOption}>
                 <FilterButton text={'По названию'} filterValue={'name'}/>
